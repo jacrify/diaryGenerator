@@ -31,7 +31,7 @@ If you want to use this code, you will need to do the following:
  
  Now you can edit "build_my_notebook.py" and make it do what you want. This contains the code for stiching together the notebook pages.
  
- The file notebook_builder.py, on the other hand, contains the core class files and documentation on how to use them.
+ The file notebook_builder.py, on the other hand, contains the core classes and documentation on how to use them.
  
  
  ## Key Concepts

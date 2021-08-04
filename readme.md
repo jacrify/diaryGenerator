@@ -3,7 +3,8 @@
 ## Introduction and Functionality
 This is a simple python library that allows you to generate  custom hyperlinked pdf notebook for use on eink tablets such as the Supernote A5X, Remarkable 1/2, Boox Note Air, etc. You will need some level of python to be able to use, but you should be able to get away with hacking the example.
 
-**For a sample of the kinds of documents this allows you to generate, see the bottom of this page.**
+**For a sample of the kinds of documents this allows you to generate, see the bottom of this page, or look at the sample [here](https://github.com/jacrify/diaryGenerator/raw/main/assets/sample.pdf).
+.**
 
 Currently it supports the following functionality:
 - Define a background PDF page used for all pages. You can make these on the Supernote itself if you wish, including with handwriting, and/or edit using a pdf editor (I used PDFPen)
@@ -80,5 +81,7 @@ The key things I wanted were:
 - If I decided the change the system, I wanted to be able to do this with a minimum of effort. Ideally I wanted to be able to make minor changes to the templates mid week without breaking the whole notebook. Changes from week to week I wasn't so worried about, as I will generate a new doc each week.
 - I wanted room for future growth. There are a few pdf planners kicking around with hyperlinked monthly and yearly planners. If I decide not to generate a doc each week, I wanted to be able to add functionality as required.
 
+
+The full doc I generate is available [here](https://github.com/jacrify/diaryGenerator/raw/main/assets/sample.pdf).
 
 Caveats: I'm not a Pythonista just a hacker. There are no automated tests. Your computer might catch fire. The earth will one day be torched to a cinder as it slowly spirals down into the heart of the sun, followed eons later by the terrible gloom of the stars themselves winking out one by one, and if that happens because of this code it's on you dude not me.

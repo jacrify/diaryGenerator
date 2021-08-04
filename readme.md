@@ -69,7 +69,7 @@ The general structure I wanted was as follows:
 - At the start of each week I do a simple retro of the previous week. 3 things that went well, 3 things to improve. I want a page for that with a simple template. ![[assets/Pasted image 20210804223640.png]]
 - Then I look at my calendar and pull out significant events on each day that I need to prepare for. I want a page for that also, with a section for each weekday to take notes in. ![[assets/Pasted image 20210804223702.png]]
 - I then do a brain dump of everything that is going on in my world. This is pretty freeform but normally takes a couple of pages. ![[assets/Pasted image 20210804223724.png]]
-- Swapping back and forth between the events and the dump pages, I then try and sketch out 3 significant outcomes I want to achieve in the week. I want a template page for this. ![]("https://github.com/jacrify/diaryGenerator/assets/Pasted image 20210804223751.png?raw=true")
+- Swapping back and forth between the events and the dump pages, I then try and sketch out 3 significant outcomes I want to achieve in the week. I want a template page for this. ![]("https://github.com/jacrify/diaryGenerator/assets/20210804223751.png?raw=true")
 
 Then I get on with my week. For each day of the week:
 - I start setting goals for the day with a single templated page. I may refer back to the dumps and weekly goals when doing this.![[assets/Pasted image 20210804223820.png]]

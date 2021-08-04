@@ -23,7 +23,7 @@ If you want to use this code, you will need to do the following:
 
 - Install Python3 for your platform
 - Clone the git repository
-- Install the fitz pdf library by running the shell command:
+- You'll need the pymupdf library to do the heavy lifting (details (here)[https://pymupdf.readthedocs.io/en/latest/]. To install this run the shell command:
 `pip3 install fitz`
 - Then cd to the directory where the code is, and run
  `python3 build_my_notebook.py "testout.pdf"`

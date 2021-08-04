@@ -1,6 +1,3 @@
----
-tags: desktop
----
 # A Hyperlinked PDF Notebook Generator for EInk Tablets
 
 ## Introduction and Functionality

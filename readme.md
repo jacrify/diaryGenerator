@@ -3,7 +3,6 @@ tags: desktop
 ---
 # A Hyperlinked PDF Notebook Generator for EInk Tablets
 
-Concepts:: [[Supernote A5X]],[[Python]]
 ## Introduction and Functionality
 This is a simple python library that allows you to generate  custom hyperlinked pdf notebook for use on eink tablets such as the Supernote A5X, Remarkable 1/2, Boox Note Air, etc. You will need some level of python to be able to use, but you should be able to get away with hacking the example.
 
@@ -70,15 +69,15 @@ I recently purchased a Supernote A5x. This is one of a (relatively) new class of
 However once I'd been using the device for a week I knew there were more things I wanted to make it do. Specifically I wanted some basic template notes to guide me through my weeks and days, and I wanted to be able to easily navigate between various portions of my notebooks. Supernote allows you to follow local links within PDF documents, so I looked into how difficult it would be to generate a my own hyperlinked pdf planner.
 
 The general structure I wanted was as follows:
-- At the start of each week I do a simple retro of the previous week. 3 things that went well, 3 things to improve. I want a page for that with a simple template. ![[Pasted image 20210804223640.png]]
-- Then I look at my calendar and pull out significant events on each day that I need to prepare for. I want a page for that also, with a section for each weekday to take notes in. ![[Pasted image 20210804223702.png]]
-- I then do a brain dump of everything that is going on in my world. This is pretty freeform but normally takes a couple of pages. ![[Pasted image 20210804223724.png]]
-- Swapping back and forth between the events and the dump pages, I then try and sketch out 3 significant outcomes I want to achieve in the week. I want a template page for this. ![[Pasted image 20210804223751.png]]
+- At the start of each week I do a simple retro of the previous week. 3 things that went well, 3 things to improve. I want a page for that with a simple template. ![[assets/Pasted image 20210804223640.png]]
+- Then I look at my calendar and pull out significant events on each day that I need to prepare for. I want a page for that also, with a section for each weekday to take notes in. ![[assets/Pasted image 20210804223702.png]]
+- I then do a brain dump of everything that is going on in my world. This is pretty freeform but normally takes a couple of pages. ![[assets/Pasted image 20210804223724.png]]
+- Swapping back and forth between the events and the dump pages, I then try and sketch out 3 significant outcomes I want to achieve in the week. I want a template page for this. ![[assets/Pasted image 20210804223751.png]]
 
 Then I get on with my week. For each day of the week:
-- I start setting goals for the day with a single templated page. I may refer back to the dumps and weekly goals when doing this.![[Pasted image 20210804223820.png]]
-- As my day progresses I write notes on my meetings and tasks, in a fairly linear fashion. So I need around 9 pages of space each day just for these, with an index page ![[Pasted image 20210804223908.png]]
-![[Pasted image 20210804223934.png]]
+- I start setting goals for the day with a single templated page. I may refer back to the dumps and weekly goals when doing this.![[assets/Pasted image 20210804223820.png]]
+- As my day progresses I write notes on my meetings and tasks, in a fairly linear fashion. So I need around 9 pages of space each day just for these, with an index page ![[assets/Pasted image 20210804223908.png]]
+![[assets/Pasted image 20210804223934.png]]
 The key things I wanted were:
 - I wanted to be able to jump around within the notes very easily, especially between weekly and daily goals, and the various weekly planning pages.
 - If I decided the change the system, I wanted to be able to do this with a minimum of effort. Ideally I wanted to be able to make minor changes to the templates mid week without breaking the whole notebook. Changes from week to week I wasn't so worried about, as I will generate a new doc each week.

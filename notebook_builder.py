@@ -48,7 +48,7 @@ class Links:
         self.labels={}
 
 
-    def addPage(self,page,label):
+    def addLink(self,page,label):
         self.labels[page]=label
         self.pages.append(page);
         
@@ -197,6 +197,11 @@ class Doc:
         self.fitzdoc = fitz.open() 
         self.basepdfname=basepdfname
         self.toc=[]
+    
+    def addPage( self, title="",titlex=20,titley=250,titlesize=50,basepdfname="",toclevel=0,links=[]):
+        page=Page(title=title,titlex=titlex,titley=titley,titlesize=titlesize,basepdfname=basepdfname,toclevel=toclevel,links=links)
+        self.addPages(page)
+        return page
 
     # Add one or more pages into the document.
     # This method will create fitz pages for each doc, however rendering of content
@@ -219,91 +224,10 @@ class Doc:
 
     # Ask each page to render their own conent- this is done once all pages are added
     # After rendering the document is saved.
-    def render(self):
+    def render(self,outputfilename):
         for page in self.pages:
             page.render(self.fitzdoc);
         self.fitzdoc.set_toc(self.toc, collapse=1)
-        self.fitzdoc.save("/Users/john/Dropbox/Supernote/INBOX/Week 31 - 1st Aug 2020.pdf")
-
-def buildDoc():
-
-    sunday=date.fromisoformat('2021-08-01')
-    thisweek=f"Week {sunday.strftime('%U, %Y')}"
-    
-    lastSunday=sunday+timedelta(days=-7)
-    lastweek=f"Week {lastSunday.strftime('%U, %Y')}"
+        self.fitzdoc.save(outputfilename)
 
 
-
-    doc=Doc("pagetemplate.pdf")
-
-    # links between top level weekly pages
-    weeklyLinks=LinearLinks(left=10,top=110)
-
-    # links down to daily goal pages from weekly pages
-    dailyGoalsLinks=LinearLinks(right=-10,top=110)
-
-    # Build top level weekly pages, with templates, and give them their outbound links
-    # Note the daily goal pages do not exist yet, but that's ok!
-    weeklyRetro=Page(title=f"Retro for {lastweek}",basepdfname="weeklyRetroTemplate.pdf",toclevel=1).addLinks(weeklyLinks,dailyGoalsLinks)
-    weeklyPlanner=Page(title=f"Planner for {thisweek}",basepdfname="weeklyPlannerTemplate.pdf",toclevel=1).addLinks(weeklyLinks,dailyGoalsLinks)
-    weeklyDump1=Page(title=f"Dump 1 for {thisweek}",toclevel=1).addLinks(weeklyLinks,dailyGoalsLinks)
-    weeklyDump2=Page(title=f"Dump 2 for {thisweek}",toclevel=1).addLinks(weeklyLinks,dailyGoalsLinks)
-    weeklyGoals=Page(title=f"Goals for {thisweek}",basepdfname="weeklyGoalsTemplate.pdf",toclevel=1).addLinks(weeklyLinks,dailyGoalsLinks)
-
-    # Add pages into the doc
-    doc.addPages(weeklyRetro,weeklyPlanner,weeklyDump1,weeklyDump2,weeklyGoals)
-
-    # Link top level pages to each other
-    weeklyLinks.addPage(weeklyRetro,"R");
-    weeklyLinks.addPage(weeklyPlanner,"P");
-    weeklyLinks.addPage(weeklyDump1,"D1");
-    weeklyLinks.addPage(weeklyDump2,"D2");
-    weeklyLinks.addPage(weeklyGoals,"G");
-
-    # Build one goals page and 9 notes pages for each day of the week
-    days=[]
-    for x in range(1,6):
-        tempdate=sunday+timedelta(days=x)
-        days.append(tempdate)
-
-
-    for daydate in days:
-        day=daydate.strftime('%a %-d %b %Y')
-        # Each set of daily notes has links to each other
-        dailyNotesLinks=LinearLinks(bottom=-500,right=-5,flowdirection="down")
-
-        # First page is a goals page. 
-        # Each of the daily pages links back up to the weekly pages, to the other days in the week, and to each other on this day
-        dailyGoals=Page(title=f"{day}: Daily Goals",basepdfname="dailyGoalsTemplate.pdf",toclevel=1).addLinks(weeklyLinks,dailyGoalsLinks,dailyNotesLinks)
-        
-        # This gets linked "down to" from the weekly pages above
-        dailyGoalsLinks.addPage(dailyGoals,f"{day[0]}")
-
-        # It is also linked by each other page on this day
-        dailyNotesLinks.addPage(dailyGoals,"G")
-        
-        # Add page to doc
-        doc.addPages(dailyGoals)
-
-        #Add index page
-        dailyNote=Page(title=f"{day}: Notes Index").addLinks(weeklyLinks,dailyGoalsLinks,dailyNotesLinks)
-        doc.addPages(dailyNote)
-        dailyNotesLinks.addPage(dailyNote,f"I")
-
-
-
-        for pageno in range(2,10):
-            # These are the individual note pages for a given day 
-            dailyNote=Page(title=f"{day}: Notes {pageno}").addLinks(weeklyLinks,dailyGoalsLinks,dailyNotesLinks)
-            doc.addPages(dailyNote)
-            dailyNotesLinks.addPage(dailyNote,f"{pageno}")
-
-    doc.render() 
-
-
-
-
- 
-
-buildDoc()

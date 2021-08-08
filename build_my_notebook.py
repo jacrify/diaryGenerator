@@ -10,7 +10,7 @@ lastweek=f"Week {lastSunday.strftime('%U, %Y')}"
 
 
 
-doc=Doc("pagetemplate.pdf")
+doc=Doc("templates/pagetemplate.pdf")
 
 # links between top level weekly pages
 weeklyLinks=LinearLinks(left=10,top=110)
@@ -20,10 +20,10 @@ dailyGoalsLinks=LinearLinks(right=-10,top=110)
 
 # Build top level weekly pages, with templates, and give them their outbound links
 # Note the daily goal pages do not exist yet, but that's ok!
-weeklyRetro=doc.addPage(title=f"Retro for {lastweek}",basepdfname="weeklyRetroTemplate.pdf",toclevel=1)
+weeklyRetro=doc.addPage(title=f"Retro for {lastweek}",basepdfname="templates/weeklyRetroTemplate.pdf",toclevel=1)
 weeklyRetro.addLinks(weeklyLinks,dailyGoalsLinks)
 
-weeklyPlanner=doc.addPage(title=f"Planner for {thisweek}",basepdfname="weeklyPlannerTemplate.pdf",toclevel=1)
+weeklyPlanner=doc.addPage(title=f"Planner for {thisweek}",basepdfname="templates/weeklyPlannerTemplate.pdf",toclevel=1)
 weeklyPlanner.addLinks(weeklyLinks,dailyGoalsLinks)
 
 weeklyDump1=doc.addPage(title=f"Dump 1 for {thisweek}",toclevel=1)
@@ -32,7 +32,7 @@ weeklyDump1.addLinks(weeklyLinks,dailyGoalsLinks)
 weeklyDump2=doc.addPage(title=f"Dump 2 for {thisweek}",toclevel=1)
 weeklyDump2.addLinks(weeklyLinks,dailyGoalsLinks)
 
-weeklyGoals=doc.addPage(title=f"Goals for {thisweek}",basepdfname="weeklyGoalsTemplate.pdf",toclevel=1)
+weeklyGoals=doc.addPage(title=f"Goals for {thisweek}",basepdfname="templates/weeklyGoalsTemplate.pdf",toclevel=1)
 weeklyGoals.addLinks(weeklyLinks,dailyGoalsLinks)
 
 
@@ -57,7 +57,7 @@ for daydate in days:
 
     # First page is a goals page. 
     # Each of the daily pages links back up to the weekly pages, to the other days in the week, and to each other on this day
-    dailyGoals=doc.addPage(title=f"{day}: Daily Goals",basepdfname="dailyGoalsTemplate.pdf",toclevel=1)
+    dailyGoals=doc.addPage(title=f"{day}: Daily Goals",basepdfname="templates/dailyGoalsTemplate.pdf",toclevel=1)
     dailyGoals.addLinks(weeklyLinks,dailyGoalsLinks,dailyNotesLinks)
     
     # This gets linked "down to" from the weekly pages above

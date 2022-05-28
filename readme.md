@@ -82,5 +82,6 @@ The key things I wanted were:
 
 
 The full doc I generate is available [here](https://github.com/jacrify/diaryGenerator/raw/main/assets/sample.pdf).
-
-Caveats: I'm not a seasoned Pythonista and the code is not especially good idiomatic pythhon. There are no automated tests. Your computer might catch fire. The earth will one day be torched to a cinder as it slowly spirals down into the heart of the sun, followed eons later by the terrible gloom of the stars themselves winking out one by one, and if that happens because of this code it's on you dude not me.
+ 
+ 
+Caveats: I'm not a seasoned Pythonista and the code is not especially good idiomatic pythhon. There are no automated tests. Your computer might catch fire. The earth will one day be torched to a cinder as it slowly spirals down into the heart of the sun, followed eons later by the terrible gloom of the stars themselves winking out one by one, and if that happens because you run this code it's on you dude not me.

@@ -75,6 +75,7 @@ Then I get on with my week. For each day of the week:
 - I start setting goals for the day with a single templated page. I may refer back to the dumps and weekly goals when doing this.![](https://github.com/jacrify/diaryGenerator/raw/main/assets/20210804223820.png)
 - As my day progresses I write notes on my meetings and tasks, in a fairly linear fashion. So I need around 9 pages of space each day just for these, with an index page ![](https://github.com/jacrify/diaryGenerator/raw/main/assets/20210804223908.png)
 ![](https://github.com/jacrify/diaryGenerator/raw/main/assets/20210804223934.png)
+
 The key things I wanted were:
 - I wanted to be able to jump around within the notes very easily, especially between weekly and daily goals, and the various weekly planning pages.
 - If I decided the change the system, I wanted to be able to do this with a minimum of effort. Ideally I wanted to be able to make minor changes to the templates mid week without breaking the whole notebook. Changes from week to week I wasn't so worried about, as I will generate a new doc each week.
